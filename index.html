@@ -5,38 +5,71 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SINAPK Dashboard</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0;font-family:Tahoma,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,Tahoma,sans-serif}
 body{
-min-height:100vh;
-background:
-radial-gradient(circle at top left,#4f46e5,transparent 35%),
-radial-gradient(circle at bottom right,#7c3aed,transparent 35%),
-#050816;
-color:white;padding:24px}
-.container{max-width:1200px;margin:auto}
-.glass{
-background:rgba(255,255,255,.08);
-backdrop-filter:blur(24px);
-border:1px solid rgba(255,255,255,.15);
-border-radius:24px;
+background:#0b1020;
+color:#fff;
+padding:24px;
+background-image:
+linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
+linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
+background-size:40px 40px;
 }
-.header{padding:24px;margin-bottom:20px}
-.logo{font-size:36px;font-weight:bold}
-.sub{opacity:.8;margin-top:8px}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:20px}
-.stat{padding:20px}
-.num{font-size:32px;font-weight:bold;margin-top:10px}
-.search{width:100%;padding:16px;border:none;border-radius:18px;margin-bottom:20px;background:rgba(255,255,255,.08);color:white}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
-.card{padding:20px;transition:.25s}
-.card:hover{transform:translateY(-4px)}
-.title{font-size:18px;font-weight:bold}
-.meta{opacity:.8;margin-top:10px}
-.buttons{display:flex;gap:10px;margin-top:16px}
-.btn{flex:1;padding:10px;border:none;border-radius:12px;background:rgba(255,255,255,.12);color:white}
-.footer{text-align:center;opacity:.6;margin-top:30px}
+.container{max-width:1400px;margin:auto}
+.header{
+padding:30px;
+border-radius:28px;
+background:#121a31;
+border:1px solid rgba(255,255,255,.08);
+margin-bottom:20px;
+}
+.logo{font-size:42px;font-weight:900}
+.sub{opacity:.7;margin-top:8px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-bottom:20px}
+.stat{
+background:#121a31;
+border:1px solid rgba(255,255,255,.08);
+border-radius:22px;
+padding:20px;
+}
+.num{font-size:34px;font-weight:800;margin-top:8px}
+.search{
+width:100%;padding:16px;border-radius:18px;border:none;
+background:#121a31;color:white;margin-bottom:20px;
+}
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+gap:18px;
+}
+.card{
+background:#121a31;
+border:1px solid rgba(255,255,255,.08);
+border-radius:24px;
+padding:22px;
+transition:.25s;
+}
+.card:hover{
+transform:translateY(-6px);
+border-color:#4f46e5;
+}
+.title{font-size:20px;font-weight:700}
+.meta{margin-top:8px;opacity:.8}
+.btn{
+margin-top:16px;
+width:100%;
+padding:14px;
+border:none;
+border-radius:14px;
+font-weight:700;
+color:white;
+background:linear-gradient(90deg,#4f46e5,#7c3aed);
+}
+.footer{text-align:center;margin-top:30px;opacity:.5}
 </style>
+
 </head>
 <body>
 <div class="container">
@@ -46,7 +79,7 @@ border-radius:24px;
 </div>
 
 <div class="stats">
-<div class="glass stat"><div>Servers</div><div class="num">18</div></div>
+<div class="glass stat"><div>Servers</div><div class="num" id="serverCount">0</div></div>
 <div class="glass stat"><div>Status</div><div class="num">ONLINE</div></div>
 <div class="glass stat"><div>Protocol</div><div class="num">VLESS</div></div>
 </div>
@@ -96,5 +129,15 @@ fetch('servers.json')
 
 <div class="footer">© 2026 SINAPK</div>
 </div>
+
+<script>
+fetch('servers.json')
+.then(r=>r.json())
+.then(data=>{
+ const el=document.querySelector('#serverCount');
+ if(el) el.textContent=data.length;
+});
+</script>
 </body>
+
 </html>
