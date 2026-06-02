@@ -1,186 +1,522 @@
+```html
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SINAPK Dashboard</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
+<title>SINAPK Premium Dashboard</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-html,body{width:100%;overflow-x:hidden;font-family:Inter,Tahoma,sans-serif}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Inter,Tahoma,sans-serif;
+}
+
 body{
-background:#0b1020;
+min-height:100vh;
+padding:20px;
 color:#fff;
-padding:16px;
-background-image:
-linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
-linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
-background-size:40px 40px;
+overflow-x:hidden;
+
+background:
+radial-gradient(circle at top right,#6d28d955 0%,transparent 35%),
+radial-gradient(circle at bottom left,#06b6d455 0%,transparent 35%),
+#090f1f;
 }
-.container{width:100%;max-width:1400px;margin:auto}
-.header{
-padding:24px;border-radius:24px;
-background:#121a31;
+
+.container{
+max-width:1400px;
+margin:auto;
+}
+
+.glass{
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(20px);
+-webkit-backdrop-filter:blur(20px);
 border:1px solid rgba(255,255,255,.08);
-margin-bottom:16px;
+box-shadow:
+0 8px 32px rgba(0,0,0,.25);
 }
-.logo{font-size:36px;font-weight:900}
-.sub{opacity:.7;margin-top:6px}
+
+.header{
+padding:35px;
+border-radius:32px;
+margin-bottom:20px;
+background:
+linear-gradient(
+135deg,
+rgba(79,70,229,.25),
+rgba(124,58,237,.15)
+);
+}
+
+.logo{
+font-size:52px;
+font-weight:900;
+background:
+linear-gradient(
+90deg,
+#ffffff,
+#8b5cf6,
+#22d3ee
+);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.sub{
+opacity:.7;
+margin-top:8px;
+font-size:15px;
+}
+
 .stats{
 display:grid;
 grid-template-columns:repeat(2,1fr);
-gap:12px;
-margin-bottom:16px;
+gap:15px;
+margin-bottom:20px;
 }
+
 .stat{
-background:#121a31;
-border:1px solid rgba(255,255,255,.08);
-border-radius:18px;
-padding:18px;
+padding:24px;
+border-radius:24px;
+transition:.3s;
 }
-.num{font-size:30px;font-weight:800;margin-top:8px}
+
+.stat:hover{
+transform:translateY(-5px);
+}
+
+.num{
+font-size:42px;
+font-weight:900;
+margin-top:10px;
+
+background:
+linear-gradient(
+90deg,
+#8b5cf6,
+#22d3ee
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
 .search{
 width:100%;
-padding:14px;
-border:none;
-border-radius:16px;
-background:#121a31;
-color:#fff;
-margin-bottom:18px;
+height:60px;
+padding:0 20px;
+border-radius:18px;
+border:1px solid rgba(255,255,255,.08);
+background:rgba(255,255,255,.05);
+color:white;
+font-size:16px;
+margin-bottom:20px;
+transition:.3s;
 }
+
+.search:focus{
+outline:none;
+border-color:#8b5cf6;
+box-shadow:
+0 0 0 4px rgba(139,92,246,.15);
+}
+
+.actions{
+display:flex;
+gap:10px;
+margin-bottom:20px;
+flex-wrap:wrap;
+}
+
 .cards{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:16px;
+grid-template-columns:
+repeat(auto-fit,minmax(320px,1fr));
+gap:18px;
 }
+
 .card{
-background:#121a31;
+position:relative;
+overflow:hidden;
+
+padding:22px;
+border-radius:28px;
+
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(20px);
+
 border:1px solid rgba(255,255,255,.08);
-border-radius:20px;
-padding:18px;
-transition:.25s;
+
+transition:.35s;
+
+animation:show .5s ease;
 }
+
 .card:hover{
-transform:translateY(-4px);
-border-color:#4f46e5;
+transform:
+translateY(-8px)
+scale(1.02);
+
+border-color:#8b5cf6;
+
+box-shadow:
+0 20px 60px rgba(124,58,237,.3);
 }
-.title{font-size:18px;font-weight:700;word-break:break-word}
-.meta{margin-top:8px;opacity:.8;word-break:break-word}
-.buttons{display:flex;gap:10px;margin-top:16px}
+
+.card::before{
+content:"";
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:2px;
+
+background:
+linear-gradient(
+90deg,
+transparent,
+#8b5cf6,
+transparent
+);
+
+transition:.8s;
+}
+
+.card:hover::before{
+left:100%;
+}
+
+.title{
+font-size:20px;
+font-weight:800;
+}
+
+.meta{
+margin-top:8px;
+opacity:.8;
+}
+
+.buttons{
+display:flex;
+gap:10px;
+margin-top:18px;
+}
+
 .btn{
 flex:1;
-padding:14px;
+height:50px;
 border:none;
-border-radius:14px;
-font-weight:700;
-color:#fff;
+border-radius:16px;
 cursor:pointer;
-background:linear-gradient(90deg,#4f46e5,#7c3aed);
-}
-.footer{text-align:center;margin-top:24px;opacity:.5}
 
-@media (max-width:768px){
-body{padding:12px}
-.logo{font-size:28px}
-.stats{grid-template-columns:1fr}
-.cards{grid-template-columns:1fr}
-.buttons{flex-direction:column}
-.btn{width:100%}
+font-weight:700;
+color:white;
+
+background:
+linear-gradient(
+135deg,
+#4f46e5,
+#7c3aed
+);
+
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+
+box-shadow:
+0 10px 25px rgba(124,58,237,.4);
+}
+
+.footer{
+text-align:center;
+margin-top:40px;
+opacity:.5;
+letter-spacing:2px;
+font-size:14px;
+}
+
+#toast{
+position:fixed;
+bottom:25px;
+left:50%;
+transform:translateX(-50%);
+
+background:
+linear-gradient(
+135deg,
+#4f46e5,
+#7c3aed
+);
+
+padding:14px 22px;
+border-radius:16px;
+
+opacity:0;
+pointer-events:none;
+
+transition:.3s;
+
+z-index:9999;
+}
+
+@keyframes show{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:none;
+}
+}
+
+@media(max-width:768px){
+
+.logo{
+font-size:38px;
+}
+
+.stats{
+grid-template-columns:1fr;
+}
+
+.cards{
+grid-template-columns:1fr;
+}
+
+.buttons{
+flex-direction:column;
+}
+
+.btn{
+width:100%;
+}
 }
 </style>
-
-
 </head>
+
 <body>
+
 <div class="container">
+
 <div class="glass header">
 <div class="logo">SINAPK</div>
-<div class="sub">Premium Glass Dashboard</div>
+<div class="sub">
+Premium Glass Dashboard
+</div>
 </div>
 
 <div class="stats">
-<div class="glass stat"><div>Servers</div><div class="num" id="serverCount">0</div></div>
-<div class="glass stat"><div>Status</div><div class="num">ONLINE</div></div>
+
+<div class="glass stat">
+<div>Total Servers</div>
+<div class="num" id="serverCount">0</div>
+</div>
+
+<div class="glass stat">
+<div>Status</div>
+<div class="num">ONLINE</div>
+</div>
 
 </div>
 
-<input class="search" placeholder="جستجوی سرور ...">
+<input
+type="text"
+class="search"
+placeholder="جستجوی سرور ..."
+id="searchInput"
+>
 
-
-
-<div style="margin-bottom:15px;display:flex;gap:10px;flex-wrap:wrap">
-    <button class="btn" onclick="copySub()">
-        📋 Copy Subscription
-    </button>
-    
+<div class="actions">
+<button class="btn" onclick="copySub()">
+📋 Copy Subscription
+</button>
 </div>
+
 <div class="cards" id="cardsContainer"></div>
 
-<script>
-fetch('servers.json')
-.then(r => r.json())
-.then(servers => {
-  const container = document.getElementById('cardsContainer');
-
-  servers.forEach(server => {
-    container.innerHTML += `
-      <div class="glass card">
-        <div class="title">${server.name}</div>
-        <div class="meta">Protocol: ${server.protocol}</div>
-        <div class="meta">Port: ${server.port}</div>
-
-        <div class="server-data" style="display:none">${server.link}</div>
-
-        <div class="buttons">
-          <button class="btn copyBtn">Copy</button>
-          <button class="btn">QR</button>
-        </div>
-      </div>`;
-  });
-
-  document.querySelectorAll('.copyBtn').forEach(btn => {
-    btn.onclick = function() {
-      const text = this.closest('.card')
-        .querySelector('.server-data')
-        .textContent.trim();
-
-      navigator.clipboard.writeText(text);
-
-      this.textContent = 'Copied ✓';
-      setTimeout(() => this.textContent = 'Copy', 1500);
-    };
-  });
-});
-</script>
+<div class="footer">
+© 2026 SINAPK
 </div>
 
-<div class="footer">© 2026 SINAPK</div>
 </div>
 
-<script>
-fetch('servers.json')
-.then(r=>r.json())
-.then(data=>{
- const el=document.querySelector('#serverCount');
- if(el) el.textContent=data.length;
-});
-</script>
+<div id="toast"></div>
 
 <script>
 
-const SUB_URL = "https://calm-leaf-06c5.asdwaqdw.workers.dev/sub/raw/FAObjOQRlRbnaARd?app=xray#%F0%9F%92%A6%20BPB%20Raw";
+const SUB_URL =
+"https://calm-leaf-06c5.asdwaqdw.workers.dev/sub/raw/FAObjOQRlRbnaARd?app=xray";
 
-function copySub(){
-    navigator.clipboard.writeText(SUB_URL).then(()=>{
-        alert('Subscription copied');
-    });
+function toast(msg){
+
+const t =
+document.getElementById('toast');
+
+t.textContent = msg;
+t.style.opacity = 1;
+
+setTimeout(()=>{
+t.style.opacity = 0;
+},2000);
 }
 
+function copySub(){
 
+navigator.clipboard
+.writeText(SUB_URL)
+.then(()=>{
+toast("Subscription Copied ✓");
+});
+
+}
+
+fetch('servers.json')
+.then(r=>r.json())
+.then(servers=>{
+
+const container =
+document.getElementById(
+'cardsContainer'
+);
+
+document.getElementById(
+'serverCount'
+).textContent =
+servers.length;
+
+let html='';
+
+servers.forEach(server=>{
+
+html += `
+<div class="card"
+data-search="
+${server.name}
+${server.protocol}
+${server.port}
+">
+
+<div class="title">
+${server.name}
+</div>
+
+<div class="meta">
+🌐 Protocol :
+${server.protocol}
+</div>
+
+<div class="meta">
+🔌 Port :
+${server.port}
+</div>
+
+<div class="server-data"
+style="display:none">
+${server.link}
+</div>
+
+<div class="buttons">
+
+<button
+class="btn copyBtn">
+📋 Copy
+</button>
+
+<button
+class="btn qrBtn">
+📱 QR
+</button>
+
+</div>
+
+</div>
+`;
+
+});
+
+container.innerHTML = html;
+
+document
+.querySelectorAll('.copyBtn')
+.forEach(btn=>{
+
+btn.onclick=function(){
+
+const link =
+this.closest('.card')
+.querySelector('.server-data')
+.textContent
+.trim();
+
+navigator.clipboard
+.writeText(link);
+
+toast("Server Copied ✓");
+
+};
+
+});
+
+document
+.querySelectorAll('.qrBtn')
+.forEach(btn=>{
+
+btn.onclick=function(){
+
+const link =
+this.closest('.card')
+.querySelector('.server-data')
+.textContent
+.trim();
+
+window.open(
+'https://api.qrserver.com/v1/create-qr-code/?size=500x500&data='+
+encodeURIComponent(link)
+);
+
+};
+
+});
+
+});
+
+const search =
+document.getElementById(
+'searchInput'
+);
+
+search.addEventListener(
+'input',
+function(){
+
+const value =
+this.value.toLowerCase();
+
+document
+.querySelectorAll('.card')
+.forEach(card=>{
+
+const text =
+card.dataset.search
+.toLowerCase();
+
+card.style.display =
+text.includes(value)
+? ''
+: 'none';
+
+});
+
+});
 </script>
+
 </body>
-
-
 </html>
+```
