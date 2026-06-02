@@ -1,0 +1,20 @@
+[
+  {
+    "name":"🇩🇪 Germany TLS",
+    "protocol":"VLESS",
+    "port":"443",
+    "link":"vless://YOUR_GERMANY_LINK"
+  },
+  {
+    "name":"🇳🇱 Netherlands",
+    "protocol":"VLESS",
+    "port":"2096",
+    "link":"vless://YOUR_NETHERLANDS_LINK"
+  },
+  {
+    "name":"🇫🇷 France",
+    "protocol":"VLESS",
+    "port":"2086",
+    "link":"vless://YOUR_FRANCE_LINK"
+  }
+]
