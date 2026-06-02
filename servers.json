@@ -3,18 +3,18 @@
     "name":"🇩🇪 Germany TLS",
     "protocol":"VLESS",
     "port":"443",
-    "link":"vless://3ddd9a43-c369-4629-aa0b-b7b04a04a124@soft-union-756b.sinapk.workers.dev:2086?encryption=none&security=none&type=ws&host=soft-union-756b.sinapk.workers.dev&path=%2FeyJqdW5rIjoiVkZWM1BxbUFtVEIiLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByb3h5aXAiLCJwYW5lbElQcyI6W119%3Fed%3D2560#%F0%9F%92%A6%201%20-%20VLESS%20-%20Domain%20%3A%202086"
+    "link":""
   },
   {
     "name":"🇳🇱 Netherlands",
     "protocol":"VLESS",
     "port":"2096",
-    "link":"vless://YOUR_NETHERLANDS_LINK"
+    "link":""
   },
   {
     "name":"🇫🇷 France",
     "protocol":"VLESS",
     "port":"2086",
-    "link":"vless://YOUR_FRANCE_LINK"
+    "link":""
   }
 ]
