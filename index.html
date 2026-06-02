@@ -1,143 +1,96 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SINAPK Dashboard</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,Tahoma,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;overflow-x:hidden;font-family:Inter,Tahoma,sans-serif}
 body{
 background:#0b1020;
 color:#fff;
-padding:24px;
+padding:16px;
 background-image:
 linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
 linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
 background-size:40px 40px;
 }
-.container{max-width:1400px;margin:auto}
+.container{width:100%;max-width:1400px;margin:auto}
 .header{
-padding:30px;
-border-radius:28px;
+padding:24px;border-radius:24px;
 background:#121a31;
 border:1px solid rgba(255,255,255,.08);
-margin-bottom:20px;
+margin-bottom:16px;
 }
-.logo{font-size:42px;font-weight:900}
-.sub{opacity:.7;margin-top:8px}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-bottom:20px}
+.logo{font-size:36px;font-weight:900}
+.sub{opacity:.7;margin-top:6px}
+.stats{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:12px;
+margin-bottom:16px;
+}
 .stat{
 background:#121a31;
 border:1px solid rgba(255,255,255,.08);
-border-radius:22px;
-padding:20px;
+border-radius:18px;
+padding:18px;
 }
-.num{font-size:34px;font-weight:800;margin-top:8px}
+.num{font-size:30px;font-weight:800;margin-top:8px}
 .search{
-width:100%;padding:16px;border-radius:18px;border:none;
-background:#121a31;color:white;margin-bottom:20px;
+width:100%;
+padding:14px;
+border:none;
+border-radius:16px;
+background:#121a31;
+color:#fff;
+margin-bottom:18px;
 }
 .cards{
 display:grid;
-grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
-gap:18px;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:16px;
 }
 .card{
 background:#121a31;
 border:1px solid rgba(255,255,255,.08);
-border-radius:24px;
-padding:22px;
+border-radius:20px;
+padding:18px;
 transition:.25s;
 }
 .card:hover{
-transform:translateY(-6px);
+transform:translateY(-4px);
 border-color:#4f46e5;
 }
-.title{font-size:20px;font-weight:700}
-.meta{margin-top:8px;opacity:.8}
+.title{font-size:18px;font-weight:700;word-break:break-word}
+.meta{margin-top:8px;opacity:.8;word-break:break-word}
+.buttons{display:flex;gap:10px;margin-top:16px}
 .btn{
-margin-top:16px;
-width:100%;
+flex:1;
 padding:14px;
 border:none;
 border-radius:14px;
 font-weight:700;
-color:white;
+color:#fff;
+cursor:pointer;
 background:linear-gradient(90deg,#4f46e5,#7c3aed);
-  @media (max-width:768px){
+}
+.footer{text-align:center;margin-top:24px;opacity:.5}
 
-body{
-    padding:12px;
+@media (max-width:768px){
+body{padding:12px}
+.logo{font-size:28px}
+.stats{grid-template-columns:1fr}
+.cards{grid-template-columns:1fr}
+.buttons{flex-direction:column}
+.btn{width:100%}
 }
-
-.header{
-    padding:18px;
-}
-
-.logo{
-    font-size:28px;
-}
-
-.sub{
-    font-size:13px;
-}
-
-.stats{
-    grid-template-columns:1fr;
-    gap:12px;
-}
-
-.stat{
-    padding:16px;
-}
-
-.num{
-    font-size:26px;
-}
-
-.search{
-    padding:14px;
-    font-size:14px;
-}
-
-.cards{
-    grid-template-columns:1fr;
-    gap:14px;
-}
-
-.card{
-    padding:18px;
-}
-
-.title{
-    font-size:16px;
-}
-
-.meta{
-    font-size:13px;
-}
-
-.buttons{
-    flex-direction:column;
-}
-
-.btn{
-    width:100%;
-    min-height:48px;
-    font-size:15px;
-}
-
-.footer{
-    font-size:12px;
-}
-}
-}
-.footer{text-align:center;margin-top:30px;opacity:.5}
 </style>
+
 
 </head>
 <body>
