@@ -110,10 +110,11 @@ body{padding:12px}
 
 
 
-<div style="margin-bottom:15px">
-    <button class="btn" onclick="importToHiddify()">
-        🚀 Import to Hiddify
+<div style="margin-bottom:15px;display:flex;gap:10px;flex-wrap:wrap">
+    <button class="btn" onclick="copySub()">
+        📋 Copy Subscription
     </button>
+    
 </div>
 <div class="cards" id="cardsContainer"></div>
 
@@ -168,10 +169,16 @@ fetch('servers.json')
 </script>
 
 <script>
-function importToHiddify(){
-    const subUrl = "https://sinapk-ui.pages.dev/sub";
-    window.location.href = "hiddify://import/" + encodeURIComponent(subUrl);
+
+const SUB_URL = "https://sinapk-ui.pages.dev/sub";
+
+function copySub(){
+    navigator.clipboard.writeText(SUB_URL).then(()=>{
+        alert('Subscription copied');
+    });
 }
+
+
 </script>
 </body>
 
