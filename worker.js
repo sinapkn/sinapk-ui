@@ -2,7 +2,7 @@
 const SUBSCRIPTION_CONFIGS = [
   "vless://your-uuid@server.com:443?security=tls&type=ws&host=&path=/#Server%201",
   "vmess://eyJ2IjoiMiIsInBzIjoiU2VydmVyIDIiLCJhZGQiOiJzZXJ2ZXIuY29tIiwicG9ydCI6IjQ0MyIsImlkIjoieW91ci11dWlkIiwiYWlkIjoiMCIsInNjeSI6ImF1dG8iLCJuZXQiOiJ3cyIsInR5cGUiOiJub25lIiwiaG9zdCI6IiIsInBhdGgiOiIvIiwidGxzIjoidGxzIn0=",
-  "trojan://your-password@server.com:443?sni=example.com#Server%203"
+  "vless://7daceaee-4ac6-48d3-9d29-f9913effc9f2@188.114.96.227:2086?encryption=none&security=none&type=ws&host=calm-leaf-06c5.asdwaqdw.workers.dev&path=%2FeyJqdW5rIjoid2dMd09tcXg3d0JZQmRtQyIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0%3D%3Fed%3D2560#%F0%9F%92%A6%206%20-%20VLESS%20-%20Clean%20IP%20%3A%202086"
 ];
 
 export default {
