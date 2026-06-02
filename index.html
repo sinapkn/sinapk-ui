@@ -19,7 +19,6 @@ padding:20px;
 color:#fff;
 overflow-x:hidden;
 
-/* 💚 NEON GREEN THEME */
 background:
 radial-gradient(circle at top right,#00ff9d55 0%,transparent 35%),
 radial-gradient(circle at bottom left,#00e5ff55 0%,transparent 35%),
@@ -49,8 +48,6 @@ background:rgba(0,255,157,.08);
 .logo{
 font-size:52px;
 font-weight:900;
-
-/* 💚 neon text */
 background:linear-gradient(90deg,#00ff9d,#00e5ff,#00ff9d);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
@@ -62,32 +59,49 @@ margin-top:8px;
 font-size:15px;
 }
 
+/* ✅ STATS (NEW MINIMAL DESIGN) */
 .stats{
 display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:15px;
+grid-template-columns:1fr;
 margin-bottom:20px;
 }
 
-.stat{
-padding:24px;
-border-radius:24px;
-transition:.3s;
+.stat.single{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:18px 20px;
+border-radius:22px;
 }
 
-.stat:hover{
-transform:translateY(-5px);
+.stat-item{
+display:flex;
+flex-direction:column;
+gap:6px;
+}
+
+.label{
+font-size:13px;
+opacity:.7;
 }
 
 .num{
-font-size:42px;
-font-weight:900;
-margin-top:10px;
-
-/* 💚 neon numbers */
+font-size:28px;
+font-weight:800;
 background:linear-gradient(90deg,#00ff9d,#00e5ff);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
+}
+
+.online{
+background:linear-gradient(90deg,#00ff9d,#00ff9d);
+}
+
+.divider{
+width:1px;
+height:35px;
+background:rgba(255,255,255,.1);
+margin:0 15px;
 }
 
 .search{
@@ -141,9 +155,7 @@ animation:show .5s ease;
 
 .card:hover{
 transform:translateY(-8px) scale(1.02);
-
 border-color:#00ff9d;
-
 box-shadow:0 20px 60px rgba(0,255,157,.25);
 }
 
@@ -154,7 +166,6 @@ top:0;
 left:-100%;
 width:100%;
 height:2px;
-
 background:linear-gradient(90deg,transparent,#00ff9d,transparent);
 transition:.8s;
 }
@@ -187,10 +198,7 @@ border-radius:16px;
 cursor:pointer;
 font-weight:700;
 color:white;
-
-/* 💚 buttons */
 background:linear-gradient(135deg,#00ff9d,#00e5ff);
-
 transition:.3s;
 }
 
@@ -212,17 +220,12 @@ position:fixed;
 bottom:25px;
 left:50%;
 transform:translateX(-50%);
-
 background:linear-gradient(135deg,#00ff9d,#00e5ff);
-
 padding:14px 22px;
 border-radius:16px;
-
 opacity:0;
 pointer-events:none;
-
 transition:.3s;
-
 z-index:9999;
 }
 
@@ -231,12 +234,30 @@ from{opacity:0;transform:translateY(20px);}
 to{opacity:1;transform:none;}
 }
 
+/* 📱 MOBILE */
 @media(max-width:768px){
+
 .logo{font-size:38px;}
-.stats{grid-template-columns:1fr;}
-.cards{grid-template-columns:1fr;}
-.buttons{flex-direction:column;}
-.btn{width:100%;}
+
+.stat.single{
+padding:14px 16px;
+}
+
+.num{
+font-size:22px;
+}
+
+.cards{
+grid-template-columns:1fr;
+}
+
+.buttons{
+flex-direction:column;
+}
+
+.btn{
+width:100%;
+}
 }
 </style>
 </head>
@@ -250,18 +271,23 @@ to{opacity:1;transform:none;}
 <div class="sub">Neon Cyber Dashboard</div>
 </div>
 
+<!-- ✅ MINIMAL STATS -->
 <div class="stats">
+<div class="glass stat single">
 
-<div class="glass stat">
-<div>Total Servers</div>
+<div class="stat-item">
+<div class="label">Servers</div>
 <div class="num" id="serverCount">0</div>
 </div>
 
-<div class="glass stat">
-<div>Status</div>
-<div class="num">ONLINE</div>
+<div class="divider"></div>
+
+<div class="stat-item">
+<div class="label">Status</div>
+<div class="num online">ONLINE</div>
 </div>
 
+</div>
 </div>
 
 <input type="text" class="search" placeholder="جستجوی سرور ..." id="searchInput">
