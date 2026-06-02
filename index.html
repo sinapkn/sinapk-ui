@@ -60,20 +60,25 @@ font-size:15px;
 }
 
 /* ✅ STATS (NEW MINIMAL DESIGN) */
+.stats{
+display:grid;
+grid-template-columns:1fr;
+margin-bottom:20px;
+}
+
 .stat.single{
 display:flex;
 align-items:center;
 justify-content:space-between;
-padding:18px 20px;
-border-radius:22px;
 }
 
-
-
 .stat-item{
+flex:1;
 display:flex;
 flex-direction:column;
-gap:6px;
+align-items:center;
+justify-content:center;
+text-align:center;
 }
 
 .label{
@@ -107,13 +112,6 @@ background:rgba(255,255,255,.1);
 margin:0 15px;
 }
  
-.stat.single .stat-item{
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-}
-
 .search{
 width:100%;
 height:60px;
