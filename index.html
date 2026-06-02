@@ -109,6 +109,12 @@ body{padding:12px}
 <input class="search" placeholder="جستجوی سرور ...">
 
 
+
+<div style="margin-bottom:15px">
+    <button class="btn" onclick="importToHiddify()">
+        🚀 Import to Hiddify
+    </button>
+</div>
 <div class="cards" id="cardsContainer"></div>
 
 <script>
@@ -160,6 +166,14 @@ fetch('servers.json')
  if(el) el.textContent=data.length;
 });
 </script>
+
+<script>
+function importToHiddify(){
+    const subUrl = "https://sinapk-ui.pages.dev/sub";
+    window.location.href = "hiddify://import/" + encodeURIComponent(subUrl);
+}
+</script>
 </body>
+
 
 </html>
