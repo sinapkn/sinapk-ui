@@ -812,86 +812,491 @@ body{
   background:rgba(56,189,248,.05);
 }
 
-/* 📱 ریسپانسیو */
+/* 📱 ریسپانسیو - تبلت */
 @media(max-width:768px){
+  body{
+    padding:10px;
+  }
+  
+  .header{
+    padding:24px 16px;
+    border-radius:20px;
+    margin-bottom:14px;
+  }
+  
+  .logo{
+    font-size:42px;
+    letter-spacing:-1px;
+  }
+  
+  .logo-badge{
+    top:-6px;
+    left:-14px;
+    font-size:9px;
+    padding:3px 8px;
+  }
+  
+  .sub{
+    font-size:10px;
+    letter-spacing:3px;
+    margin-top:8px;
+  }
+  
+  .sub::before,.sub::after{
+    width:20px;
+    margin:0 8px;
+  }
+  
+  .stats{
+    margin-bottom:14px;
+  }
+  
   .stat.single{
     grid-template-columns:1fr;
-    gap:12px;
+    padding:16px;
+    border-radius:18px;
+    gap:0;
   }
-
+  
   .stat-item{
     flex-direction:row;
     justify-content:space-between;
-    padding:10px 0;
+    padding:12px 8px;
     border-bottom:1px solid rgba(125,211,252,.08);
   }
-
-  .stat-item:last-child{border-bottom:none;}
-
-  .stat-icon{
-    width:36px;
-    height:36px;
+  
+  .stat-item:last-child{
+    border-bottom:none;
   }
-
-  .num{font-size:28px;}
-
+  
+  .stat-icon{
+    width:38px;
+    height:38px;
+    border-radius:10px;
+  }
+  
+  .stat-icon svg{
+    width:18px;
+    height:18px;
+  }
+  
+  .label{
+    font-size:11px;
+  }
+  
+  .num{
+    font-size:26px;
+  }
+  
+  .online{
+    font-size:12px;
+    padding:6px 14px;
+  }
+  
+  .search-wrapper{
+    margin-bottom:14px;
+  }
+  
+  .search{
+    height:54px;
+    padding:0 50px 0 16px;
+    font-size:14px;
+    border-radius:16px;
+  }
+  
+  .search-icon{
+    right:18px;
+  }
+  
+  .actions{
+    flex-direction:column;
+    gap:10px;
+    margin-bottom:16px;
+  }
+  
+  .btn{
+    width:100%;
+    height:52px;
+    font-size:14px;
+    border-radius:14px;
+    min-width:0;
+  }
+  
+  .btn svg{
+    width:16px;
+    height:16px;
+  }
+  
   .cards{
     grid-template-columns:1fr;
+    gap:12px;
   }
-
+  
   .card{
+    padding:18px;
+    border-radius:18px;
     transform:none !important;
   }
-
+  
   .card:hover{
     transform:translateY(-4px) !important;
   }
-
+  
+  .card-header{
+    gap:12px;
+    margin-bottom:14px;
+  }
+  
+  .card-icon{
+    width:44px;
+    height:44px;
+    border-radius:12px;
+  }
+  
+  .card-icon svg{
+    width:20px;
+    height:20px;
+  }
+  
+  .title{
+    font-size:15px;
+  }
+  
+  .status{
+    font-size:11px;
+  }
+  
+  .info-grid{
+    padding:12px;
+    gap:10px;
+    border-radius:12px;
+    margin-bottom:14px;
+  }
+  
+  .info-label{
+    font-size:10px;
+  }
+  
+  .info-value{
+    font-size:13px;
+  }
+  
+  .buttons{
+    grid-template-columns:1fr;
+    gap:8px;
+  }
+  
+  .card .btn{
+    height:48px;
+    font-size:13px;
+    border-radius:12px;
+  }
+  
+  .card .btn svg{
+    width:14px;
+    height:14px;
+  }
+  
   .orb{
     filter:blur(60px);
     opacity:.25;
   }
-
+  
   .bg-aurora{
     animation:none;
     opacity:.4;
   }
 }
 
+/* 📱 ریسپانسیو - موبایل کوچک */
 @media(max-width:480px){
-  .actions{
-    flex-direction:column;
+  body{
+    padding:8px;
   }
-
-  .btn{
-    width:100%;
+  
+  .header{
+    padding:20px 14px;
+    border-radius:18px;
+    margin-bottom:12px;
   }
-
-  .buttons{
-    grid-template-columns:1fr;
+  
+  .logo{
+    font-size:36px;
   }
-
-  .info-grid{
-    grid-template-columns:1fr;
+  
+  .sub{
+    font-size:9px;
+    letter-spacing:2px;
+    margin-top:6px;
   }
-
-  .logo-badge{
+  
+  .sub::before,.sub::after{
     display:none;
   }
-
-  .sub::before,.sub::after{
+  
+  .stat.single{
+    padding:14px;
+    border-radius:16px;
+  }
+  
+  .stat-item{
+    padding:10px 6px;
+  }
+  
+  .stat-icon{
+    width:36px;
+    height:36px;
+  }
+  
+  .num{
+    font-size:24px;
+  }
+  
+  .online{
+    font-size:11px;
+    padding:5px 12px;
+  }
+  
+  .search{
+    height:50px;
+    padding:0 46px 0 14px;
+    font-size:13px;
+    border-radius:14px;
+  }
+  
+  .search-icon{
+    right:16px;
+  }
+  
+  .search-icon svg{
+    width:18px;
+    height:18px;
+  }
+  
+  .actions{
+    gap:8px;
+    margin-bottom:14px;
+  }
+  
+  .btn{
+    height:50px;
+    font-size:13px;
+    border-radius:12px;
+    gap:8px;
+  }
+  
+  .btn svg{
+    width:15px;
+    height:15px;
+  }
+  
+  .cards{
+    gap:10px;
+  }
+  
+  .card{
+    padding:16px;
+    border-radius:16px;
+  }
+  
+  .card-header{
+    gap:10px;
+    margin-bottom:12px;
+  }
+  
+  .card-icon{
+    width:40px;
+    height:40px;
+    border-radius:10px;
+  }
+  
+  .card-icon svg{
+    width:18px;
+    height:18px;
+  }
+  
+  .title{
+    font-size:14px;
+    margin-bottom:4px;
+  }
+  
+  .status{
+    font-size:10px;
+  }
+  
+  .status-dot{
+    width:5px;
+    height:5px;
+  }
+  
+  .info-grid{
+    padding:10px;
+    gap:8px;
+    border-radius:10px;
+    margin-bottom:12px;
+  }
+  
+  .info-label{
+    font-size:9px;
+  }
+  
+  .info-label svg{
+    width:9px;
+    height:9px;
+  }
+  
+  .info-value{
+    font-size:12px;
+  }
+  
+  .buttons{
+    gap:8px;
+  }
+  
+  .card .btn{
+    height:46px;
+    font-size:12px;
+    border-radius:10px;
+    gap:6px;
+  }
+  
+  .card .btn svg{
+    width:13px;
+    height:13px;
+  }
+  
+  .logo-badge{
     display:none;
   }
 }
 
+/* 📱 ریسپانسیو - موبایل خیلی کوچک */
 @media(max-width:360px){
+  body{
+    padding:6px;
+  }
+  
+  .header{
+    padding:18px 12px;
+    border-radius:16px;
+    margin-bottom:10px;
+  }
+  
+  .logo{
+    font-size:32px;
+  }
+  
+  .sub{
+    font-size:8px;
+  }
+  
+  .stat.single{
+    padding:12px;
+  }
+  
+  .stat-item{
+    padding:8px 4px;
+  }
+  
+  .stat-icon{
+    width:32px;
+    height:32px;
+  }
+  
+  .stat-icon svg{
+    width:16px;
+    height:16px;
+  }
+  
+  .num{
+    font-size:22px;
+  }
+  
+  .online{
+    font-size:10px;
+    padding:4px 10px;
+  }
+  
+  .search{
+    height:48px;
+    padding:0 42px 0 12px;
+    font-size:12px;
+    border-radius:12px;
+  }
+  
+  .search-icon{
+    right:14px;
+  }
+  
+  .search-icon svg{
+    width:16px;
+    height:16px;
+  }
+  
+  .actions{
+    gap:6px;
+    margin-bottom:12px;
+  }
+  
+  .btn{
+    height:48px;
+    font-size:12px;
+    border-radius:10px;
+  }
+  
+  .cards{
+    gap:8px;
+  }
+  
+  .card{
+    padding:14px;
+    border-radius:14px;
+  }
+  
   .card-header{
     flex-direction:column;
     text-align:center;
+    gap:8px;
+    margin-bottom:10px;
   }
-
+  
+  .card-icon{
+    width:38px;
+    height:38px;
+  }
+  
+  .title{
+    font-size:13px;
+  }
+  
   .status{
     justify-content:center;
+  }
+  
+  .info-grid{
+    grid-template-columns:1fr;
+    padding:8px;
+    gap:6px;
+    margin-bottom:10px;
+  }
+  
+  .info-item{
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+  }
+  
+  .info-value{
+    font-size:11px;
+  }
+  
+  .buttons{
+    gap:6px;
+  }
+  
+  .card .btn{
+    height:44px;
+    font-size:11px;
   }
 }
 
@@ -1096,6 +1501,172 @@ body{
 .modal-close svg{
   width:18px;
   height:18px;
+}
+
+/* 📱 Modal ریسپانسیو */
+@media(max-width:768px){
+  .modal{
+    padding:16px;
+  }
+  
+  .modal-content{
+    padding:24px 20px;
+    border-radius:20px;
+  }
+  
+  .modal-title{
+    font-size:18px;
+    margin-bottom:16px;
+  }
+  
+  .modal-qr{
+    padding:14px;
+    border-radius:12px;
+    margin-bottom:16px;
+  }
+  
+  .modal-qr img{
+    width:min(220px,70vw);
+    height:min(220px,70vw);
+  }
+  
+  .modal-close{
+    top:12px;
+    left:12px;
+    width:32px;
+    height:32px;
+  }
+  
+  .modal-close svg{
+    width:16px;
+    height:16px;
+  }
+}
+
+@media(max-width:480px){
+  .modal{
+    padding:12px;
+  }
+  
+  .modal-content{
+    padding:20px 16px;
+    border-radius:18px;
+  }
+  
+  .modal-title{
+    font-size:16px;
+    margin-bottom:14px;
+  }
+  
+  .modal-qr{
+    padding:12px;
+    margin-bottom:14px;
+  }
+  
+  .modal-qr img{
+    width:min(200px,75vw);
+    height:min(200px,75vw);
+  }
+  
+  .modal-close{
+    top:10px;
+    left:10px;
+    width:30px;
+    height:30px;
+  }
+  
+  .modal-close svg{
+    width:14px;
+    height:14px;
+  }
+}
+
+/* 📱 Toast ریسپانسیو */
+@media(max-width:768px){
+  #toast{
+    bottom:20px;
+    padding:12px 20px;
+    font-size:13px;
+    max-width:calc(100vw - 32px);
+  }
+  
+  #toast span:first-child{
+    font-size:16px;
+  }
+}
+
+@media(max-width:480px){
+  #toast{
+    bottom:16px;
+    padding:10px 16px;
+    font-size:12px;
+    max-width:calc(100vw - 24px);
+  }
+  
+  #toast span:first-child{
+    font-size:14px;
+  }
+}
+
+/* 📱 Footer ریسپانسیو */
+@media(max-width:768px){
+  .footer{
+    margin-top:30px;
+    padding:20px 16px;
+    font-size:11px;
+    letter-spacing:1.5px;
+  }
+}
+
+@media(max-width:480px){
+  .footer{
+    margin-top:24px;
+    padding:16px 12px;
+    font-size:10px;
+    letter-spacing:1px;
+  }
+  
+  .footer::before{
+    width:80px;
+  }
+}
+
+/* 📱 Empty state ریسپانسیو */
+@media(max-width:768px){
+  .empty-state{
+    padding:60px 16px;
+    font-size:14px;
+  }
+}
+
+@media(max-width:480px){
+  .empty-state{
+    padding:50px 12px;
+    font-size:13px;
+  }
+}
+
+/* 📱 Loader ریسپانسیو */
+@media(max-width:768px){
+  .loader{
+    padding:60px 0;
+  }
+  
+  .loader span{
+    width:12px;
+    height:12px;
+  }
+}
+
+@media(max-width:480px){
+  .loader{
+    padding:50px 0;
+  }
+  
+  .loader span{
+    width:10px;
+    height:10px;
+  }
 }
 </style>
 </head>
