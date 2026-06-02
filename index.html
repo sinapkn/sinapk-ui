@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SINAPK Premium Dashboard</title>
+<title>SINAPK Neon Dashboard</title>
 
 <style>
 *{
@@ -19,10 +19,11 @@ padding:20px;
 color:#fff;
 overflow-x:hidden;
 
+/* 💚 NEON GREEN THEME */
 background:
-radial-gradient(circle at top right,#6d28d955 0%,transparent 35%),
-radial-gradient(circle at bottom left,#06b6d455 0%,transparent 35%),
-#090f1f;
+radial-gradient(circle at top right,#00ff9d55 0%,transparent 35%),
+radial-gradient(circle at bottom left,#00e5ff55 0%,transparent 35%),
+#050b10;
 }
 
 .container{
@@ -35,32 +36,22 @@ background:rgba(255,255,255,.05);
 backdrop-filter:blur(20px);
 -webkit-backdrop-filter:blur(20px);
 border:1px solid rgba(255,255,255,.08);
-box-shadow:
-0 8px 32px rgba(0,0,0,.25);
+box-shadow:0 8px 32px rgba(0,0,0,.25);
 }
 
 .header{
 padding:35px;
 border-radius:32px;
 margin-bottom:20px;
-background:
-linear-gradient(
-135deg,
-rgba(79,70,229,.25),
-rgba(124,58,237,.15)
-);
+background:rgba(0,255,157,.08);
 }
 
 .logo{
 font-size:52px;
 font-weight:900;
-background:
-linear-gradient(
-90deg,
-#ffffff,
-#8b5cf6,
-#22d3ee
-);
+
+/* 💚 neon text */
+background:linear-gradient(90deg,#00ff9d,#00e5ff,#00ff9d);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
@@ -93,13 +84,8 @@ font-size:42px;
 font-weight:900;
 margin-top:10px;
 
-background:
-linear-gradient(
-90deg,
-#8b5cf6,
-#22d3ee
-);
-
+/* 💚 neon numbers */
+background:linear-gradient(90deg,#00ff9d,#00e5ff);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
@@ -119,9 +105,8 @@ transition:.3s;
 
 .search:focus{
 outline:none;
-border-color:#8b5cf6;
-box-shadow:
-0 0 0 4px rgba(139,92,246,.15);
+border-color:#00ff9d;
+box-shadow:0 0 0 4px rgba(0,255,157,.15);
 }
 
 .actions{
@@ -133,8 +118,7 @@ flex-wrap:wrap;
 
 .cards{
 display:grid;
-grid-template-columns:
-repeat(auto-fit,minmax(320px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
 gap:18px;
 }
 
@@ -156,14 +140,11 @@ animation:show .5s ease;
 }
 
 .card:hover{
-transform:
-translateY(-8px)
-scale(1.02);
+transform:translateY(-8px) scale(1.02);
 
-border-color:#8b5cf6;
+border-color:#00ff9d;
 
-box-shadow:
-0 20px 60px rgba(124,58,237,.3);
+box-shadow:0 20px 60px rgba(0,255,157,.25);
 }
 
 .card::before{
@@ -174,14 +155,7 @@ left:-100%;
 width:100%;
 height:2px;
 
-background:
-linear-gradient(
-90deg,
-transparent,
-#8b5cf6,
-transparent
-);
-
+background:linear-gradient(90deg,transparent,#00ff9d,transparent);
 transition:.8s;
 }
 
@@ -211,25 +185,18 @@ height:50px;
 border:none;
 border-radius:16px;
 cursor:pointer;
-
 font-weight:700;
 color:white;
 
-background:
-linear-gradient(
-135deg,
-#4f46e5,
-#7c3aed
-);
+/* 💚 buttons */
+background:linear-gradient(135deg,#00ff9d,#00e5ff);
 
 transition:.3s;
 }
 
 .btn:hover{
 transform:translateY(-3px);
-
-box-shadow:
-0 10px 25px rgba(124,58,237,.4);
+box-shadow:0 10px 25px rgba(0,255,157,.35);
 }
 
 .footer{
@@ -246,12 +213,7 @@ bottom:25px;
 left:50%;
 transform:translateX(-50%);
 
-background:
-linear-gradient(
-135deg,
-#4f46e5,
-#7c3aed
-);
+background:linear-gradient(135deg,#00ff9d,#00e5ff);
 
 padding:14px 22px;
 border-radius:16px;
@@ -265,37 +227,16 @@ z-index:9999;
 }
 
 @keyframes show{
-from{
-opacity:0;
-transform:translateY(20px);
-}
-to{
-opacity:1;
-transform:none;
-}
+from{opacity:0;transform:translateY(20px);}
+to{opacity:1;transform:none;}
 }
 
 @media(max-width:768px){
-
-.logo{
-font-size:38px;
-}
-
-.stats{
-grid-template-columns:1fr;
-}
-
-.cards{
-grid-template-columns:1fr;
-}
-
-.buttons{
-flex-direction:column;
-}
-
-.btn{
-width:100%;
-}
+.logo{font-size:38px;}
+.stats{grid-template-columns:1fr;}
+.cards{grid-template-columns:1fr;}
+.buttons{flex-direction:column;}
+.btn{width:100%;}
 }
 </style>
 </head>
@@ -306,9 +247,7 @@ width:100%;
 
 <div class="glass header">
 <div class="logo">SINAPK</div>
-<div class="sub">
-Premium Glass Dashboard
-</div>
+<div class="sub">Neon Cyber Dashboard</div>
 </div>
 
 <div class="stats">
@@ -325,24 +264,15 @@ Premium Glass Dashboard
 
 </div>
 
-<input
-type="text"
-class="search"
-placeholder="جستجوی سرور ..."
-id="searchInput"
->
+<input type="text" class="search" placeholder="جستجوی سرور ..." id="searchInput">
 
 <div class="actions">
-<button class="btn" onclick="copySub()">
-📋 Copy Subscription
-</button>
+<button class="btn" onclick="copySub()">📋 Copy Subscription</button>
 </div>
 
 <div class="cards" id="cardsContainer"></div>
 
-<div class="footer">
-© 2026 SINAPK
-</div>
+<div class="footer">© 2026 SINAPK</div>
 
 </div>
 
@@ -354,168 +284,75 @@ const SUB_URL =
 "https://calm-leaf-06c5.asdwaqdw.workers.dev/sub/raw/FAObjOQRlRbnaARd?app=xray";
 
 function toast(msg){
-
-const t =
-document.getElementById('toast');
-
-t.textContent = msg;
-t.style.opacity = 1;
-
-setTimeout(()=>{
-t.style.opacity = 0;
-},2000);
+const t=document.getElementById('toast');
+t.textContent=msg;
+t.style.opacity=1;
+setTimeout(()=>t.style.opacity=0,2000);
 }
 
 function copySub(){
-
-navigator.clipboard
-.writeText(SUB_URL)
-.then(()=>{
-toast("Subscription Copied ✓");
-});
-
+navigator.clipboard.writeText(SUB_URL)
+.then(()=>toast("Subscription Copied ✓"));
 }
 
 fetch('servers.json')
 .then(r=>r.json())
 .then(servers=>{
 
-const container =
-document.getElementById(
-'cardsContainer'
-);
-
-document.getElementById(
-'serverCount'
-).textContent =
-servers.length;
+const container=document.getElementById('cardsContainer');
+document.getElementById('serverCount').textContent=servers.length;
 
 let html='';
 
 servers.forEach(server=>{
 
-html += `
-<div class="card"
-data-search="
-${server.name}
-${server.protocol}
-${server.port}
-">
+html+=`
+<div class="card" data-search="${server.name} ${server.protocol} ${server.port}">
 
-<div class="title">
-${server.name}
-</div>
+<div class="title">${server.name}</div>
 
-<div class="meta">
-🌐 Protocol :
-${server.protocol}
-</div>
+<div class="meta">🌐 Protocol: ${server.protocol}</div>
+<div class="meta">🔌 Port: ${server.port}</div>
 
-<div class="meta">
-🔌 Port :
-${server.port}
-</div>
-
-<div class="server-data"
-style="display:none">
-${server.link}
-</div>
+<div class="server-data" style="display:none">${server.link}</div>
 
 <div class="buttons">
-
-<button
-class="btn copyBtn">
-📋 Copy
-</button>
-
-<button
-class="btn qrBtn">
-📱 QR
-</button>
-
+<button class="btn copyBtn">📋 Copy</button>
+<button class="btn qrBtn">📱 QR</button>
 </div>
 
-</div>
-`;
-
+</div>`;
 });
 
-container.innerHTML = html;
+container.innerHTML=html;
 
-document
-.querySelectorAll('.copyBtn')
-.forEach(btn=>{
-
+document.querySelectorAll('.copyBtn').forEach(btn=>{
 btn.onclick=function(){
-
-const link =
-this.closest('.card')
-.querySelector('.server-data')
-.textContent
-.trim();
-
-navigator.clipboard
-.writeText(link);
-
-toast("Server Copied ✓");
-
+const link=this.closest('.card').querySelector('.server-data').textContent.trim();
+navigator.clipboard.writeText(link);
+toast("Copied ✓");
 };
-
 });
 
-document
-.querySelectorAll('.qrBtn')
-.forEach(btn=>{
-
+document.querySelectorAll('.qrBtn').forEach(btn=>{
 btn.onclick=function(){
-
-const link =
-this.closest('.card')
-.querySelector('.server-data')
-.textContent
-.trim();
-
-window.open(
-'https://api.qrserver.com/v1/create-qr-code/?size=500x500&data='+
-encodeURIComponent(link)
-);
-
+const link=this.closest('.card').querySelector('.server-data').textContent.trim();
+window.open('https://api.qrserver.com/v1/create-qr-code/?size=500x500&data='+encodeURIComponent(link));
 };
-
 });
 
 });
 
-const search =
-document.getElementById(
-'searchInput'
-);
+document.getElementById('searchInput').addEventListener('input',function(){
+const value=this.value.toLowerCase();
 
-search.addEventListener(
-'input',
-function(){
-
-const value =
-this.value.toLowerCase();
-
-document
-.querySelectorAll('.card')
-.forEach(card=>{
-
-const text =
-card.dataset.search
-.toLowerCase();
-
-card.style.display =
-text.includes(value)
-? ''
-: 'none';
-
+document.querySelectorAll('.card').forEach(card=>{
+const text=card.dataset.search.toLowerCase();
+card.style.display=text.includes(value)?'':'none';
+});
 });
 
-});
 </script>
 
 </body>
 </html>
-
