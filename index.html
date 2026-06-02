@@ -93,23 +93,14 @@ background:linear-gradient(90deg,#00ff9d,#00e5ff);
 -webkit-text-fill-color:transparent;
 }
 
+@keyframes pulse{
+0%{box-shadow:0 0 8px rgba(0,255,157,.3);}
+50%{box-shadow:0 0 20px rgba(0,255,157,.7);}
+100%{box-shadow:0 0 8px rgba(0,255,157,.3);}
+}
+
 .online{
-font-size:14px;
-font-weight:800;
-padding:6px 12px;
-border-radius:999px;
-
-color:#00150d;
-
-background:linear-gradient(90deg,#00ff9d,#00e5ff);
-
-display:inline-flex;
-align-items:center;
-justify-content:center;
-
-box-shadow:
-0 0 12px rgba(0,255,157,.35),
-0 0 25px rgba(0,229,255,.15);
+animation:pulse 1.8s infinite;
 }
 
 .divider{
