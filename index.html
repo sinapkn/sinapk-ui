@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+
+<html dir="rtl" lang="fa">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>SINAPK Dashboard</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;font-family:Tahoma,sans-serif}
 body{
@@ -44,39 +45,43 @@ border-radius:24px;
 <div class="logo">SINAPK</div>
 <div class="sub">Premium Glass Dashboard</div>
 </div>
-
 <div class="stats">
 <div class="glass stat"><div>Servers</div><div class="num">18</div></div>
 <div class="glass stat"><div>Status</div><div class="num">ONLINE</div></div>
 <div class="glass stat"><div>Protocol</div><div class="num">VLESS</div></div>
 </div>
-
-<input class="search" placeholder="جستجوی سرور ...">
-
+<input class="search" placeholder="جستجوی سرور ..."/>
 <div class="cards">
 <div class="glass card">
 <div class="title">🇩🇪 Germany TLS</div>
 <div class="meta">Protocol: VLESS</div>
 <div class="meta">Port: 443</div>
-<div class="buttons"><button class="btn">Copy</button><button class="btn">QR</button></div>
+<div class="server-data" style="display:none;">vless://GERMANY_SERVER_LINK</div><div class="buttons"><button class="btn copyBtn">Copy</button><button class="btn">QR</button></div>
 </div>
-
 <div class="glass card">
 <div class="title">🇳🇱 Netherlands</div>
 <div class="meta">Protocol: VLESS</div>
 <div class="meta">Port: 2096</div>
-<div class="buttons"><button class="btn">Copy</button><button class="btn">QR</button></div>
+<div class="server-data" style="display:none;">vless://NETHERLANDS_SERVER_LINK</div><div class="buttons"><button class="btn copyBtn">Copy</button><button class="btn">QR</button></div>
 </div>
-
 <div class="glass card">
 <div class="title">🇫🇷 France</div>
 <div class="meta">Protocol: VLESS</div>
 <div class="meta">Port: 2086</div>
-<div class="buttons"><button class="btn">Copy</button><button class="btn">QR</button></div>
+<div class="server-data" style="display:none;">vless://FRANCE_SERVER_LINK</div><div class="buttons"><button class="btn copyBtn">Copy</button><button class="btn">QR</button></div>
 </div>
 </div>
-
 <div class="footer">© 2026 SINAPK</div>
 </div>
-</body>
+<script>
+document.querySelectorAll('.copyBtn').forEach(btn=>{
+ btn.addEventListener('click',function(){
+   const text=this.closest('.card').querySelector('.server-data').textContent.trim();
+   navigator.clipboard.writeText(text).then(()=>{
+      this.textContent='Copied ✓';
+      setTimeout(()=>{this.textContent='Copy';},1500);
+   });
+ });
+});
+</script></body>
 </html>
